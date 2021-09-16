@@ -6,7 +6,9 @@ extern Goblin::Application* Goblin::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	printf("Welcome to goblin");
+	Goblin::Log::Init();
+	Goblin::Log::GetCoreLogger()->warn("Initialized Log");
+	Goblin::Log::GetClientLogger()->info("Hello !");
 	auto app = Goblin::CreateApplication();
 	app->Run();
 	delete app;
