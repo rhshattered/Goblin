@@ -7,11 +7,11 @@ on those corresponding platforms. If not https://premake.github.io/download </br
 should have all the binaries you need to download to get goblin running. </br>
 
 ### Always clone recursively or else project will not have all neccesary files </br>
-`
+```
 # This is the command to properly clone it
 # It is reccomended to clone into a folder not to desktop
 git clone --recursive https://github.com/ttvtempest17/Goblin
-`
+```
 ## Goblins Mission
 -Cross Platform Wonderfullness </br>
 -C++ 20 Paradigms </br>
