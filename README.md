@@ -6,15 +6,17 @@ if you are on linux or mac we assume that you know how to use premake </br>
 on those corresponding platforms. If not https://premake.github.io/download </br>
 should have all the binaries you need to download to get goblin running. </br>
 
-### Always close recursively or else project will not have all neccesary files </br>
+### Always clone recursively or else project will not have all neccesary files </br>
 `
+# This is the command to properly clone it
+# It is reccomended to clone into a folder not to desktop
 git clone --recursive https://github.com/ttvtempest17/Goblin
 `
 ## Goblins Mission
 -Cross Platform Wonderfullness </br>
 -C++ 20 Paradigms </br>
--Lightning Speed Memory Management </br>
--Multi Threading Everywhere </br>
+-Lightning Speed Memory Management (LSMM) </br>
+-Smart Multi Threading </br>
 -Ease of use sdk and homemade programming language </br>
  
  ## Goblins Features
