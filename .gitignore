@@ -5,4 +5,8 @@ bin-int/
 x64/
 Debug/
 
+
 *.user
+*.sln
+*.vcxproj
+*.filters
