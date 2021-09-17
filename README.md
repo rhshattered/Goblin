@@ -1,7 +1,15 @@
 # Goblin
 ![goblin-clipart-md](https://user-images.githubusercontent.com/53288338/133801956-459c5c70-b1be-4075-ba91-1aeb22c22d50.png)
 
+## Installing 
+if you are on linux or mac we assume that you know how to use premake </br>
+on those corresponding platforms. If not https://premake.github.io/download </br>
+should have all the binaries you need to download to get goblin running. </br>
 
+### Always close recursively or else project will not have all neccesary files </br>
+`
+git clone --recursive https://github.com/ttvtempest17/Goblin
+`
 ## Goblins Mission
 -Cross Platform Wonderfullness </br>
 -C++ 20 Paradigms </br>
