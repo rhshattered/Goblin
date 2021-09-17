@@ -2,11 +2,17 @@
 ![goblin-clipart-md](https://user-images.githubusercontent.com/53288338/133801956-459c5c70-b1be-4075-ba91-1aeb22c22d50.png)
 
 ## Installing 
+### Tips
 if you are on linux or mac we assume that you know how to use premake </br>
 on those corresponding platforms. If not https://premake.github.io/download </br>
 should have all the binaries you need to download to get goblin running. </br>
 
-### Always clone recursively or else project will not have all neccesary files </br>
+### Common Issues
+First Build failing on visual studio </br>
+--Reason DLL not built first causing sandbox to not find it </br>
+---Fixed by building twice </br>
+
+### Clone </br>
 ```
 # This is the command to properly clone it
 # It is reccomended to clone into a folder not to desktop
