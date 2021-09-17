@@ -7,9 +7,8 @@ extern Goblin::Application* Goblin::CreateApplication();
 int main(int argc, char** argv)
 {
 	Goblin::Log::Init();
-	GB_CORE_WARN("Initialized Log!");
-	int a = 5;
-	GB_INFO("Hello! Var={0}", a);
+	GB_CORE_INFO("Initialized Goblin Logging!");
+	GB_INFO("Initialized Game Logging!");
 	auto app = Goblin::CreateApplication();
 	app->Run();
 	delete app;
