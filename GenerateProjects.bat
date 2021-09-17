@@ -18,8 +18,7 @@ echo vs2019            Generate Visual Studio 2019 project files
 echo xcode4            Generate Apple Xcode 4 project files
 echo Write Editor of choice: 
 set /p input=""
-echo GPG(Goblin Project Generator) Currently only supports vs2019 Automatically
-echo Worse case you open up this batch file and change the premake parameter we cant stop you
+cls
 call vendor\bin\premake5\premake5.exe %input%
 PAUSE
 cls
