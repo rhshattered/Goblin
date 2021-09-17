@@ -1,6 +1,26 @@
+term.setTextColor(term.white)
+print("Using premake: " , _PREMAKE_VERSION , '\n')
+
+print("Premake Location: ", _PREMAKE_COMMAND , '\n')
+
+print("Working Location: ", _WORKING_DIR , '\n')
+
+print("Performing Action: ", _ACTION , '\n')
+
+local ver = os.getversion()
+print("Operating System Detected: ", os.target(), string.format(" %d.%d.%d (%s)",
+ver.majorversion, ver.minorversion, ver.revision,
+ver.description), '\n')
+if os.is64bit() then
+	term.setTextColor(term.white)
+	print("Architecture: x64")
+else 
+	term.setTextColor(term.red)
+	print("Architecture: x86")
+end
+
 workspace "Goblin_Engine"
 	architecture "x64"
-
 	configurations
 	{
 		"Debug",
@@ -9,6 +29,7 @@ workspace "Goblin_Engine"
 	}
 
 	startproject "Sandbox"
+	characterset ("MBCS")
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
