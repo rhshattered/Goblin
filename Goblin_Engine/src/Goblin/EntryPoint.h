@@ -6,9 +6,13 @@ extern Goblin::Application* Goblin::CreateApplication();
 
 int main(int argc, char** argv)
 {
+	std::string cpu = Goblin::ComponentLogger::GetCpuDetails();
+	float ram = Goblin::ComponentLogger::GetTotalSystemMemory();
 	Goblin::Log::Init();
 	GB_CORE_INFO("Initialized Goblin Logging!");
 	GB_INFO("Initialized Game Logging!");
+	GB_CORE_INFO("Cpu Name {:s}", cpu);
+	GB_CORE_INFO("Total Ram in GB {:d}", static_cast<int>(ram));
 	auto app = Goblin::CreateApplication();
 	app->Run();
 	delete app;
