@@ -1,3 +1,4 @@
+#include "gbpch.h"
 #include "Application.h"
 
 namespace Goblin {
