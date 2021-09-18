@@ -96,6 +96,9 @@ project "Goblin_Engine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "gbpch.h"
+	pchsource "Goblin_Engine/src/gbpch.cpp"
+
 	files 
 	{
 		"%{prj.name}/src/**.h",
