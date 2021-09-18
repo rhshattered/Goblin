@@ -1,12 +1,19 @@
 # Goblin
 ![goblin-clipart-md](https://user-images.githubusercontent.com/53288338/133801956-459c5c70-b1be-4075-ba91-1aeb22c22d50.png)
 
+## Discord
+[Discord Link](https://disboard.org/server/725166731655643136)
 ## Installing 
 ### Tips
 if you are on linux or mac we assume that you know how to use premake </br>
 on those corresponding platforms. If not https://premake.github.io/download </br>
 should have all the binaries you need to download to get goblin running. </br>
-
+</br>
+GenerateProjects.bat wont work on linux/mac for multiple reasons so you will have to </br>
+manually command line project generation </br>
+</br>
+Update your graphics drivers always when dealing with gpu driven software such as Goblin. </br>
+</br>
 ### Common Issues
 First Build failing on visual studio </br>
 --Reason DLL not built first causing sandbox to not find it </br>
@@ -18,6 +25,14 @@ First Build failing on visual studio </br>
 # It is reccomended to clone into a folder not to desktop
 git clone --recursive https://github.com/ttvtempest17/Goblin
 ```
+
+### Ideal Development
+Since Goblin is created with Microsoft Visual Studio Community 2019 </br>
+Premake favors it as it has some settings not available to other ide's. </br>
+
+New graphics cards are something Goblin loves because of Vulkan. </br>
+
+
 ## Goblins Mission
 -Cross Platform Wonderfullness </br>
 -C++ 20 Paradigms </br>
