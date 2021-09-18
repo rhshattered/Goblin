@@ -1,3 +1,5 @@
+term.setTextColor(term.green)
+print("GoblinProjectGenerator\n")
 term.setTextColor(term.white)
 print("Using premake: " , _PREMAKE_VERSION , '\n')
 
@@ -28,8 +30,14 @@ workspace "Goblin_Engine"
 		"Dist",
 	}
 
+	flags
+	{
+		"MultiProcessorCompile"
+	}
+
 	startproject "Sandbox"
 	characterset ("MBCS")
+
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
