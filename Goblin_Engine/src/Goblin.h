@@ -2,10 +2,14 @@
 
 #include "gbpch.h"
 // For use by Goblin Applications
+
+// ----Logging----
 #include "Goblin/Log.h"
 #include "Goblin/ComponentLogger.h"
-#include "Goblin/Application.h"
+// ----Logging----
 
+#include "Goblin/Application.h"
+#include "Goblin/EventHandler.h"
 // ----Entry Point----
 #include "Goblin/EntryPoint.h"
 // ----Entry Point----
