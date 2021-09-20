@@ -1,7 +1,6 @@
 #include "gbpch.h"
 #include "Application.h"
 #include "EventHandler.h"
-
 namespace Goblin {
 	Application::Application()
 	{
@@ -15,10 +14,10 @@ namespace Goblin {
 
 	void Application::Run()
 	{
-		while (true)
+		while (!window.shouldClose())
 		{
-			Goblin::EventHandler::EventHandler();
-			std::this_thread::sleep_for(std::chrono::milliseconds(14));
+			glfwSwapBuffers(window.GetWindow());
+			glfwPollEvents();
 		}
 	}
 }
