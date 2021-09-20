@@ -1,3 +1,4 @@
+
 term.setTextColor(term.green)
 print("GoblinProjectGenerator\n")
 term.setTextColor(term.white)
@@ -58,6 +59,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Goblin_Engine/vendor/spdlog/include",
+		"Goblin_Engine/vendor/glfw/include",
 		"Goblin_Engine/src"
 	}
 
@@ -97,7 +99,7 @@ project "Goblin_Engine"
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "gbpch.h"
-	pchsource "Goblin_Engine/src/gbpch.cpp"
+	pchsource "%{prj.name}/src/gbpch.cpp"
 
 	files 
 	{
@@ -108,8 +110,19 @@ project "Goblin_Engine"
 	includedirs
 	{
 		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/vendor/glfw/include",
 		"%{prj.name}/src"
 	}
+	ignoredefaultlibraries { "MSVCRT" }
+	
+	libdirs {"%{prj.name}/vendor/glfw/lib"}
+	-- Our static lib should not link against GLFW
+	links {
+		"opengl32", "glfw3_mt", "legacy_stdio_definitions", "odbccp32", 
+		"kernel32", "winspool", "comdlg32.lib",
+		"advapi32","shell32", "ole32", "oleaut32.lib", "uuid.lib", "odbc32", "odbccp32"
+	}
+
 
 	filter "system:windows"
 		cppdialect "C++20"
