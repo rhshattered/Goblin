@@ -1,7 +1,7 @@
 #pragma once
 #include "gbpch.h"
 namespace Goblin {
-    class GOBLIN_API ComponentLogger {
+    class ComponentLogger {
     public:
 #ifdef GB_PLATFORM_WINDOWS
         float static GetTotalSystemMemory()
