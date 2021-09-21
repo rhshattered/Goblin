@@ -12,4 +12,5 @@
 #include <Windows.h>
 #include <intrin.h>
 #endif // GB_PLATFORM_WINDOWS
+#include "glad/gl.h"
 #include "GLFW/glfw3.h"
