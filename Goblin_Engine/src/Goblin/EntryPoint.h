@@ -16,6 +16,9 @@ int main(int argc, char** argv)
 	auto app = Goblin::CreateApplication();
 	app->Run();
 	delete app;
+	GB_CORE_INFO("All libraries free'd see ya later!");
+	std::this_thread::sleep_for(std::chrono::seconds(3));
+	
 }
 #else
 #error Goblin only supports windows
