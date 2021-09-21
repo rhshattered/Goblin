@@ -60,6 +60,7 @@ project "Sandbox"
 	{
 		"Goblin_Engine/vendor/spdlog/include",
 		"Goblin_Engine/vendor/glfw/include",
+		"Goblin_Engine/vendor/glad/include",
 		"Goblin_Engine/src"
 	}
 
@@ -111,16 +112,18 @@ project "Goblin_Engine"
 	{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/vendor/glfw/include",
+		"%{prj.name}/vendor/glad/include",
 		"%{prj.name}/src"
 	}
-	ignoredefaultlibraries { "MSVCRT" }
+	ignoredefaultlibraries { "MSVCRT", "LIBCMT" }
 	
 	libdirs {"%{prj.name}/vendor/glfw/lib"}
 	-- Our static lib should not link against GLFW
 	links {
-		"opengl32", "glfw3_mt", "legacy_stdio_definitions", "odbccp32", 
-		"kernel32", "winspool", "comdlg32.lib",
-		"advapi32","shell32", "ole32", "oleaut32.lib", "uuid.lib", "odbc32", "odbccp32"
+		"opengl32", "glfw3_mt" --"legacy_stdio_definitions", "odbccp32", 
+		--"kernel32", "winspool", "comdlg32.lib",
+		--"advapi32","shell32", "ole32", "oleaut32.lib", "uuid.lib", "odbc32", "odbccp32"
+		-- Commented out because these libs have been proven to be unneccasary
 	}
 
 
