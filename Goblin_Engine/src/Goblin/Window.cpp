@@ -10,7 +10,9 @@ namespace Goblin {
 	Window::~Window()
 	{
 		glfwDestroyWindow(window);
+		GB_CORE_INFO("Destroyed GLFWwindow");
 		glfwTerminate();
+		GB_CORE_INFO("GLFW Terminated");
 	}
 
 	void Window::initWindow()
