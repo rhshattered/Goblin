@@ -14,10 +14,6 @@ namespace Goblin {
 
 	void Application::Run()
 	{
-		while (!window.shouldClose())
-		{
-			glfwSwapBuffers(window.GetWindow());
-			glfwPollEvents();
-		}
+
 	}
 }
