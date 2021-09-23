@@ -42,6 +42,8 @@ workspace "Goblin_Engine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+include "Goblin_Engine/vendor/glad"
+
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
@@ -53,7 +55,8 @@ project "Sandbox"
 	files 
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.c"
 	}
 
 	includedirs
@@ -105,7 +108,8 @@ project "Goblin_Engine"
 	files 
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.c"
 	}
 
 	includedirs
@@ -120,10 +124,8 @@ project "Goblin_Engine"
 	libdirs {"%{prj.name}/vendor/glfw/lib"}
 	-- Our static lib should not link against GLFW
 	links {
-		"opengl32", "glfw3_mt" --"legacy_stdio_definitions", "odbccp32", 
-		--"kernel32", "winspool", "comdlg32.lib",
-		--"advapi32","shell32", "ole32", "oleaut32.lib", "uuid.lib", "odbc32", "odbccp32"
-		-- Commented out because these libs have been proven to be unneccasary
+		"opengl32", "glfw3_mt",
+		"glad"
 	}
 
 
