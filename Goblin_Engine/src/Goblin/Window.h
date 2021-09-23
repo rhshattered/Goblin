@@ -1,6 +1,7 @@
 #pragma once
 #include "gbpch.h"
 #include "Core.h"
+#include "Render.h"
 //#define GLFW_INCLUDE_VULKAN
 namespace Goblin {
 	class GOBLIN_API Window
@@ -11,13 +12,21 @@ namespace Goblin {
 		
 		bool shouldClose() { return glfwWindowShouldClose(window); }
 		GLFWwindow* GetWindow() { return window; }
+		Render::GL rnd;
 	private:
 		void initWindow();
+		void renderWindow();
+
 
 		const int width;
 		const int height;
 		GLFWwindow* window;
 		std::string windowName;
+
+		GLuint shaderProgram;
+
+		GLuint VAO, VBO;
+
 	};
 }
 
