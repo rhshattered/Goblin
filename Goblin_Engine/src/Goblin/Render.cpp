@@ -16,7 +16,13 @@ namespace Goblin {
 
 	void Render::GL::Init() 
 	{
-		gladLoadGL();
+		if (gladLoadGL()) {
+			GB_CORE_INFO("Glad loaded OpenGL");
+		}
+		else
+		{
+			GB_CORE_CRITICAL("Glad failed to load OpenGL");
+		}
 	}
 
 	void Render::GL::Prep()
@@ -32,7 +38,7 @@ namespace Goblin {
 		if (!success)
 		{
 			glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-			GB_CORE_ERROR("ERROR::SHADER::VERTEX::COMPILATION_FAILED\n {:s}", infoLog);
+			GB_CORE_ERROR("Vertex shader failed to compile\n {:s}", infoLog);
 		}
 
 		unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -43,7 +49,7 @@ namespace Goblin {
 		if (!success)
 		{
 			glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-			GB_CORE_ERROR("ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n {:s}", infoLog);
+			GB_CORE_ERROR("Fragment shader failed to compile\n {:s}", infoLog);
 		}
 		// link shaders
 		shaderProgram = glCreateProgram();
@@ -54,8 +60,9 @@ namespace Goblin {
 		glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
 		if (!success) {
 			glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-			GB_CORE_ERROR("ERROR::SHADER::PROGRAM::LINKING_FAILED\n {:s}", infoLog);
+			GB_CORE_ERROR("Shader program failed to link\n {:s}", infoLog);
 		}
+
 		glDeleteShader(vertexShader);
 		glDeleteShader(fragmentShader);
 
@@ -98,15 +105,16 @@ namespace Goblin {
 
 	void Render::GL::Draw() 
 	{
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		// draw our first triangle
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		// glBindVertexArray(0); // no need to unbind it every time 
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
 }
