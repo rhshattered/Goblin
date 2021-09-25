@@ -2,6 +2,7 @@
 #include "gbpch.h"
 #include "Core.h"
 #include "Render.h"
+#include "Input.h"
 //#define GLFW_INCLUDE_VULKAN
 namespace Goblin {
 	class GOBLIN_API Window
@@ -13,6 +14,7 @@ namespace Goblin {
 		bool shouldClose() { return glfwWindowShouldClose(window); }
 		GLFWwindow* GetWindow() { return window; }
 		Render::GL rnd;
+		Input input;
 	private:
 		void initWindow();
 		void renderWindow();
