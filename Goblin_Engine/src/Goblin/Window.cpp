@@ -18,6 +18,8 @@ namespace Goblin {
 		GB_CORE_INFO("Window Class Destructed");
 	}
 
+
+
 	void Window::initWindow()
 	{
 		if (!glfwInit())
@@ -44,6 +46,7 @@ namespace Goblin {
 		{
 			GB_CORE_INFO("Glad loaded OpenGL");
 		}
+		input.CreateListener(window);
 		rnd.Prep();
 
 	}
