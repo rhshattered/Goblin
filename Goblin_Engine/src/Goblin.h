@@ -14,3 +14,7 @@
 // ----Entry Point----
 #include "Goblin/EntryPoint.h"
 // ----Entry Point----
+
+// ----Input----
+#include "Goblin/Input.h"
+// ----Input----
