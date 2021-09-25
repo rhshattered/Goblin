@@ -3,6 +3,15 @@
 
 ## Discord
 [Discord Link](https://disboard.org/server/725166731655643136)
+## Tests
+9/25/2021 </br>
+
+### Project
+Generated vs2019 projects upgrading to visual studio 2022: Successful </br>
+
+### OS
+Windows 11: Succesful </br>
+
 ## Installing 
 ### Tips
 if you are on linux or mac we assume that you know how to use premake </br>
