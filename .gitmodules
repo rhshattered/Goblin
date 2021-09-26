@@ -1,6 +1,7 @@
 [submodule "Goblin_Engine/vendor/spdlog"]
 	path = Goblin_Engine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+	
 [submodule "Goblin_Engine/vendor/glfw"]
 	path = Goblin_Engine/vendor/glfw
-	url = https://github.com/glfw/glfw
+	url = https://github.com/ttvtempest17/glfw
