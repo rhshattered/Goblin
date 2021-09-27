@@ -8,4 +8,4 @@
 
 [submodule "Goblin_Engine/vendor/imgui"]
 	path = Goblin_Engine/vendor/imgui
-	url = https://github.com/ttvtempest17/Goblin
+	url = https://github.com/ttvtempest17/imgui
