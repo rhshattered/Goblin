@@ -44,6 +44,7 @@ workspace "Goblin_Engine"
   include "Goblin_Engine/vendor/glad"
   include "Goblin_Engine/vendor/glfw"
   
+  
 project "Sandbox"
   location "Sandbox"
   kind "ConsoleApp"
@@ -161,7 +162,8 @@ project "Goblin_Engine"
   }
   ignoredefaultlibraries {
     "MSVCRT",
-    "LIBCMT"
+    "LIBCMT",
+    "MSVCRTD"
   }
 
   links {
