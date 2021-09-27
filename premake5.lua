@@ -41,8 +41,8 @@ workspace "Goblin_Engine"
 
   outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-  include "Goblin_Engine/vendor/glad"
-  include "Goblin_Engine/vendor/glfw"
+include "Goblin_Engine/vendor/glad"
+include "Goblin_Engine/vendor/glfw"
   
   
 project "Sandbox"
@@ -63,6 +63,7 @@ project "Sandbox"
     "Goblin_Engine/vendor/spdlog/include",
     "Goblin_Engine/vendor/glfw/include",
     "Goblin_Engine/vendor/glad/include",
+    "Goblin_Engine/vendor/imgui",
     "Goblin_Engine/src"
   }
 
@@ -158,6 +159,7 @@ project "Goblin_Engine"
     "%{prj.name}/vendor/spdlog/include",
     "%{prj.name}/vendor/glfw/include",
     "%{prj.name}/vendor/glad/include",
+    "%{prj.name}/vendor/imgui",
     "%{prj.name}/src"
   }
   ignoredefaultlibraries {
@@ -199,7 +201,8 @@ project "Goblin_Engine"
     defines "GB_DIST"
     optimize "On"
 
-print(
-  "The first build will fail on visual studio\n",
-  "The second build will work fine its due to\n",
-  "the Goblin_Engine.dll copying to soon");
+term.setTextColor(term.red)
+print("The first build will fail on visual studio.")
+term.setTextColor(term.white)
+print("The second build will work fine its due to")
+print("the Goblin_Engine.dll copying to soon.")
