@@ -5,3 +5,7 @@
 [submodule "Goblin_Engine/vendor/glfw"]
 	path = Goblin_Engine/vendor/glfw
 	url = https://github.com/ttvtempest17/glfw
+
+[submodule "Goblin_Engine/vendor/imgui"]
+	path = Goblin_Engine/vendor/imgui
+	url = https://github.com/ttvtempest17/Goblin
