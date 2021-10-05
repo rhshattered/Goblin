@@ -43,7 +43,7 @@ workspace "Goblin_Engine"
 
 include "Goblin_Engine/vendor/glad"
 include "Goblin_Engine/vendor/glfw"
-  
+include "Goblin_Engine/vendor/imgui"
   
 project "Sandbox"
   location "Sandbox"
@@ -142,7 +142,7 @@ project "Goblin_Engine"
   location "Goblin_Engine"
   kind "SharedLib"
   language "C++"
-
+	staticruntime "off"
   targetdir("bin/" .. outputdir .. "/%{prj.name}")
   objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
@@ -169,9 +169,10 @@ project "Goblin_Engine"
   }
 
   links {
-    "opengl32",
     "glfw",
-    "glad"
+    "glad",
+    "ImGui",
+    "opengl32.lib"
   }
 
   filter "system:windows"
